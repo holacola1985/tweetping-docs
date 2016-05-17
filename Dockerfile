@@ -2,7 +2,7 @@ FROM node:argon
 
 WORKDIR /docs
 
-COPY ./dist /docs
+COPY ./dist /docs/public/docs
 
 VOLUME /docs
 
