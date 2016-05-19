@@ -1,0 +1,19 @@
+.api-selector {
+  margin: 0 0 20px;
+}
+.api {
+  float: left;
+  padding: 7px 15px;
+  color: white;
+  background-color: #89bf04;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 7px;
+}
+.api-active {
+  font-weight: bold;
+  background-color: #547f00;
+}
+.clear {
+  clear: both;
+}
