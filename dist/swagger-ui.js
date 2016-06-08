@@ -1392,11 +1392,18 @@ SwaggerClient.prototype.buildFromSpec = function (response) {
 
     if (typeof this.host === 'undefined' || this.host === '') {
       this.host = location.host;
+      if (this.host === 'localhost') {
+        this.basePath = '';
+        if (location.search) {
+          location.port = location.search.substr(location.search.indexOf('local-port=') + 11, 4) || location.port;
+        }
+      }
 
       if (location.port) {
         this.host = this.host + ':' + location.port;
       }
     }
+    console.log('host used', this.host);
   }
   else {
     if (typeof this.schemes === 'undefined' || this.schemes.length === 0) {
@@ -1581,7 +1588,8 @@ SwaggerClient.prototype.parseUri = function (uri) {
     scheme: parts[4] ? parts[4].replace(':','') : undefined,
     host: parts[11],
     port: parts[12],
-    path: parts[15]
+    path: parts[15],
+    search: parts[16]
   };
 };
 

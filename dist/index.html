@@ -38,7 +38,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = apiUrl("/api/swagger.json");
+        url = apiUrl("/api/swagger.json?local-port=3000");
       }
       var api = window.location.search.match(/api=([^&]+)/);
       if (api && api.length > 1) {
@@ -136,7 +136,7 @@
 
 <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
 <div class="api-selector swagger-ui-wrap">
-  <div class="api" data-url="/api/swagger.json" id="tracker">
+  <div class="api" data-url="/api/swagger.json?local-port=3000" id="tracker">
     Tracker
   </div>
   <div class="api" data-url="/wall/swagger.json" id="wall">
